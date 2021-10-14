@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <!--Informações para conexão com banco de dados-->
+  <databse>
+    <!-- IP do servidor MySQL -->
+    <servidor>ip_externo</servidor>
+    <!-- Schemma do banco de dados -->
+    <banco>db</banco>
+    <!-- Usuário de conexão -->
+    <usuario>user</usuario>
+    <!-- Senha de conexão -->
+    <senha>pass</senha>
+  </databse>
+</config>
