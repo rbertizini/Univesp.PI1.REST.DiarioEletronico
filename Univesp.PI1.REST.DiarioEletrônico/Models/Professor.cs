@@ -7,7 +7,10 @@ namespace Univesp.PI1.REST.DiarioEletrônico.Models
 {
     public class Professor
     {
-        public int IdProfessor { get; set; }
-        public string Nome { get; set; }
+        public int IdCadProfessor { get; set; }
+        public string NomeProfessor { get; set; }
+        public string Disciplina { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
     }
 }

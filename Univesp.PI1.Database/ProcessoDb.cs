@@ -40,8 +40,15 @@ namespace Univesp.PI1.Database
             return ultId;
         }
 
-        //Atuaizar informações - update
+        //Atualizar informações - update
         public int Atualizar(string strQuery, Dictionary<string, object> parQuery)
+        {
+            //Executando comando
+            return contexto.ExecutaComando(strQuery, parQuery);
+        }
+
+        //Excluir informações - delete
+        public int Excluir(string strQuery, Dictionary<string, object> parQuery)
         {
             //Executando comando
             return contexto.ExecutaComando(strQuery, parQuery);
@@ -90,20 +97,11 @@ namespace Univesp.PI1.Database
         }
 
         //Selecionar informações e retornar lista
-        public List<Dictionary<string, string>> SelecionarLista(string strQuery, Dictionary<string, object> parQuery)
+        public List<Dictionary<string, string>> SelecionarLista(string strQuery, Dictionary<string, object> parQuery = null)
         {
             //Executando comando
             return contexto.ExecutaComandoComRetorno(strQuery, parQuery);
         }
-
-        //private TClass ConvDbClass<TClass>(Dictionary<string, string> row)
-        //{
-        //    TClass teste = new TClass();
-        //    foreach (InfoDePara infoConv in linfoConv)
-        //    {
-        //        classRef.GetType().GetProperty(infoConv.cmpPara).SetValue(classRef, row[infoConv.cmpDe]);
-        //    }
-        //}
 
         //Criando listagem de De x Para (Banco x Classe)
         public InfoDePara ConvDePara(string cmpDe, string cmpPara)
@@ -118,114 +116,5 @@ namespace Univesp.PI1.Database
             //Retorno
             return infoConv;
         }
-
-        //public Pessoa ListarPorId(int id)
-        //{
-        //    var pessoas = new List<Pessoa>();
-        //    const string strQuery = "SELECT Id, Nome FROM Pessoa WHERE Id = @Id";
-        //    var parametros = new Dictionary<string, object>
-        //    {
-        //        {"Id", id}
-        //    };
-        //    var rows = contexto.ExecutaComandoComRetorno(strQuery, parametros);
-        //    foreach (var row in rows)
-        //    {
-        //        var tempPessoa = new Pessoa
-        //        {
-        //            Id = int.Parse(!string.IsNullOrEmpty(row["Id"]) ? row["Id"] : "0"),
-        //            Nome = row["Nome"]
-        //        };
-        //        pessoas.Add(tempPessoa);
-        //    }
-
-        //    return pessoas.FirstOrDefault();
-        //}
-
-        //public List<EnviarArquivo> ListarTodos()
-        //{
-        //    var pessoas = new List<Pessoa>();
-        //    const string strQuery = "SELECT Id, Nome FROM Pessoa";
-
-        //    var rows = contexto.ExecutaComandoComRetorno(strQuery);
-        //    foreach (var row in rows)
-        //    {
-        //        var tempPessoa = new Pessoa
-        //        {
-        //            Id = int.Parse(!string.IsNullOrEmpty(row["Id"]) ? row["Id"] : "0"),
-        //            Nome = row["Nome"]
-        //        };
-        //        pessoas.Add(tempPessoa);
-        //    }
-
-        //    return pessoas;
-        //}
-
-        //private int Inserir(string strQuery)
-        //{
-        //    const string commandText = " INSERT INTO Pessoa (Nome) VALUES (@Nome) ";
-
-        //    var parameters = new Dictionary<string, object>
-        //    {
-        //        {"Nome", pessoa.Nome}
-        //    };
-
-        //    return contexto.ExecutaComando(commandText, parameters);
-        //}
-
-        //private int Alterar(Pessoa pessoa)
-        //{
-        //    var commandText = " UPDATE Pessoa SET ";
-        //    commandText += " Nome = @Nome ";
-        //    commandText += " WHERE Id = @Id ";
-
-        //    var parameters = new Dictionary<string, object>
-        //    {
-        //        {"Id", pessoa.Id},
-        //        {"Nome", pessoa.Nome}
-        //    };
-
-        //    return contexto.ExecutaComando(commandText, parameters);
-        //}
-
-        //public void Salvar(Pessoa pessoa)
-        //{
-        //    if (pessoa.Id > 0)
-        //        Alterar(pessoa);
-        //    else
-        //        Inserir(pessoa);
-        //}
-
-        //public int Excluir(int id)
-        //{
-        //    const string strQuery = "DELETE FROM Pessoa WHERE Id = @Id";
-        //    var parametros = new Dictionary<string, object>
-        //    {
-        //        {"Id", id}
-        //    };
-
-        //    return contexto.ExecutaComando(strQuery, parametros);
-        //}
-
-        //public Pessoa ListarPorId(int id)
-        //{
-        //    var pessoas = new List<Pessoa>();
-        //    const string strQuery = "SELECT Id, Nome FROM Pessoa WHERE Id = @Id";
-        //    var parametros = new Dictionary<string, object>
-        //    {
-        //        {"Id", id}
-        //    };
-        //    var rows = contexto.ExecutaComandoComRetorno(strQuery, parametros);
-        //    foreach (var row in rows)
-        //    {
-        //        var tempPessoa = new Pessoa
-        //        {
-        //            Id = int.Parse(!string.IsNullOrEmpty(row["Id"]) ? row["Id"] : "0"),
-        //            Nome = row["Nome"]
-        //        };
-        //        pessoas.Add(tempPessoa);
-        //    }
-
-        //    return pessoas.FirstOrDefault();
-        //}
     }
 }
