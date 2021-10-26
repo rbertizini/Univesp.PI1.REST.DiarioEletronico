@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Univesp.PI1.REST.DiarioEletrônico</RootNamespace>
-    <AssemblyName>Univesp.PI1.REST.DiarioEletrônico</AssemblyName>
+    <RootNamespace>Univesp.PI1.REST.DiarioEletronico</RootNamespace>
+    <AssemblyName>Univesp.PI1.REST.DiarioEletronico</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -228,15 +228,21 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
+    <Compile Include="Controllers\TurmaController.cs" />
+    <Compile Include="Data\AlunoData.cs" />
     <Compile Include="Data\ProfessorData.cs" />
+    <Compile Include="Data\TurmaData.cs" />
     <Compile Include="Except\ExceptionDb.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\MensProc.cs" />
     <Compile Include="Models\Professor.cs" />
+    <Compile Include="Models\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -267,7 +273,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Aluno\" />
     <Folder Include="Views\Professor\" />
+    <Folder Include="Views\Turma\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

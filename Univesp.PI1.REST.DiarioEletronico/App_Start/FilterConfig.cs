@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Univesp.PI1.REST.DiarioEletrônico
+namespace Univesp.PI1.REST.DiarioEletronico
 {
     public class FilterConfig
     {

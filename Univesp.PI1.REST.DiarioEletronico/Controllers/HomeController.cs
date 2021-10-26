@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Univesp.PI1.REST.DiarioEletrônico.Controllers
+namespace Univesp.PI1.REST.DiarioEletronico.Controllers
 {
     public class HomeController : Controller
     {

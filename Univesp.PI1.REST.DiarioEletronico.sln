@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Univesp.PI1.REST.DiarioEletrônico", "Univesp.PI1.REST.DiarioEletrônico\Univesp.PI1.REST.DiarioEletrônico.csproj", "{424AE138-F705-468E-A8C9-4BB1C694B870}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Univesp.PI1.REST.DiarioEletronico", "Univesp.PI1.REST.DiarioEletronico\Univesp.PI1.REST.DiarioEletronico.csproj", "{424AE138-F705-468E-A8C9-4BB1C694B870}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{92DC1F5C-C0EF-480B-A038-2B98B9031F3F}"
 EndProject

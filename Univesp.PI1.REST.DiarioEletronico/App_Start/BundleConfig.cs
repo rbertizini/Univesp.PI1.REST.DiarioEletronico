@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Univesp.PI1.REST.DiarioEletrônico
+namespace Univesp.PI1.REST.DiarioEletronico
 {
     public class BundleConfig
     {

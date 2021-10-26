@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Univesp.PI1.Database;
-using Univesp.PI1.REST.DiarioEletrônico.Models;
-using static Univesp.PI1.REST.DiarioEletrônico.Except.ExceptionDb;
+using Univesp.PI1.REST.DiarioEletronico.Models;
+using static Univesp.PI1.REST.DiarioEletronico.Except.ExceptionDb;
 
-namespace Univesp.PI1.REST.DiarioEletrônico.Data
+namespace Univesp.PI1.REST.DiarioEletronico.Data
 {
     public class ProfessorData
     {

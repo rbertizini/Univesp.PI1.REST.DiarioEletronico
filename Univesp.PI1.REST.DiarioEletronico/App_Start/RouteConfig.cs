@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Univesp.PI1.REST.DiarioEletrônico
+namespace Univesp.PI1.REST.DiarioEletronico
 {
     public class RouteConfig
     {

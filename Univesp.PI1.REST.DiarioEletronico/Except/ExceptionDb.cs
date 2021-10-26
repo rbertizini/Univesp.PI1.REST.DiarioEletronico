@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Univesp.PI1.REST.DiarioEletrônico.Except
+namespace Univesp.PI1.REST.DiarioEletronico.Except
 {
     public class ExceptionDb
     {

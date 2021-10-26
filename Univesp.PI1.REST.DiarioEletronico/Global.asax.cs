@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Mvc;
 using System.Web.Optimization;
 
-namespace Univesp.PI1.REST.DiarioEletrônico
+namespace Univesp.PI1.REST.DiarioEletronico
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
@@ -15,6 +15,7 @@ namespace Univesp.PI1.REST.DiarioEletrônico
         {
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configuration.Formatters.XmlFormatter.UseXmlSerializer = true;
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

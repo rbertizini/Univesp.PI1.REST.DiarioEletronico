@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml.Serialization;
 
-namespace Univesp.PI1.REST.DiarioEletrônico.Models
+namespace Univesp.PI1.REST.DiarioEletronico.Models
 {
     public class Professor
     {

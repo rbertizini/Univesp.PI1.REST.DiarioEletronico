@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using Univesp.PI1.REST.DiarioEletrônico.Data;
-using Univesp.PI1.REST.DiarioEletrônico.Models;
+using Univesp.PI1.REST.DiarioEletronico.Data;
+using Univesp.PI1.REST.DiarioEletronico.Models;
 
-namespace Univesp.PI1.REST.DiarioEletrônico.Controllers
+namespace Univesp.PI1.REST.DiarioEletronico.Controllers
 {
+    [RoutePrefix("api/professor")]
     public class ProfessorController : ApiController
     {
+        
         ProfessorData profData = new ProfessorData();
 
-        // GET api/values
+        // GET api/professor
+        [HttpGet]
+        [Route("")]
         public IEnumerable<Professor> Get()
         {
             //Obter lista de professores
@@ -23,7 +27,9 @@ namespace Univesp.PI1.REST.DiarioEletrônico.Controllers
             return _profs;
         }
 
-        // GET api/values/5
+        // GET api/professor/5
+        [HttpGet]
+        [Route("{id:int}")]
         public Professor Get(int id)
         {
             //Obter lista de professores
@@ -34,7 +40,9 @@ namespace Univesp.PI1.REST.DiarioEletrônico.Controllers
             return _prof;
         }
 
-        // POST api/values
+        // POST api/professor
+        [HttpPost]
+        [Route("")]
         public MensProc Post([FromBody] Professor profIns)
         {
             //Adicionar registro de professos
@@ -46,7 +54,9 @@ namespace Univesp.PI1.REST.DiarioEletrônico.Controllers
             return _mens;
         }
 
-        // PUT api/values/5
+        // PUT api/professor/5
+        [HttpPut]
+        [Route("{id:int}")]
         public MensProc Put(int id, [FromBody] Professor profEdt)
         {
             //Adicionar registro de professos
@@ -58,7 +68,9 @@ namespace Univesp.PI1.REST.DiarioEletrônico.Controllers
             return _mens;
         }
 
-        // DELETE api/values/5
+        // DELETE api/professor/5
+        [HttpDelete]
+        [Route("{id:int}")]
         public MensProc Delete(int id)
         {
             //Adicionar registro de professos

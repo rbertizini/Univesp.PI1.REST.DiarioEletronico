@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // As Informações Gerais sobre um assembly são controladas por meio do 
 // conjunto de atributos a seguir. Altere esses valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("Univesp.PI1.REST.DiarioEletrônico")]
+[assembly: AssemblyTitle("Univesp.PI1.REST.DiarioEletronico")]
 [assembly: AssemblyDescription("WebApi - Diário Eletrônico")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Univesp.PI1.REST.DiarioEletrônico")]
+[assembly: AssemblyProduct("Univesp.PI1.REST.DiarioEletronico")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
