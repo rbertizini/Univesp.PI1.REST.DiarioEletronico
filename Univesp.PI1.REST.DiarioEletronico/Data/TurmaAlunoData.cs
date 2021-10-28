@@ -10,7 +10,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
 {
     public class TurmaAlunoData
     {
-        //Obter lista de Turma
+        //Obter lista de TurmaAluno
         internal List<TurmaAluno> ObterListaTurmaAluno()
         {
             //Criando instrução
@@ -44,7 +44,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             return TurmaAlunos;
         }
 
-        //Obter registro de Turma
+        //Obter registro de TurmaAluno
         internal TurmaAluno ObterTurmaAluno(int id)
         {
             //Criando instrução
@@ -85,7 +85,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             return TurmaAluno;
         }
 
-        //Adicionar registro de Turma
+        //Adicionar registro de TurmaAluno
         internal string AdicionarTurmaAluno(TurmaAluno turmaAlunoIns)
         {
             //Criando instrução
@@ -120,8 +120,8 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             return retProc;
         }
 
-        //Alterar registro de Turma
-        internal string EditarTurma(int id, TurmaAluno turmaAlunoEdt)
+        //Alterar registro de TurmaAluno
+        internal string EditarTurmaAluno(int id, TurmaAluno turmaAlunoEdt)
         {
             //Criando instrução
             ProcessoDb procDb = new ProcessoDb();
@@ -155,7 +155,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             return retProc;
         }
 
-        //Excluir registro de Turma
+        //Excluir registro de TurmaAluno
         internal string ExcluirTurmaAluno(int id)
         {
             //Criando instrução
