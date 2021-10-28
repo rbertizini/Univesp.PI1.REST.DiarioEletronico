@@ -11,7 +11,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
     [RoutePrefix("api/turma")]
     public class TurmaController : ApiController
     {
-        TurmaData TurmaData = new TurmaData();
+        TurmaData turmaData = new TurmaData();
 
         // GET api/turma
         [HttpGet]
@@ -20,7 +20,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
         {
             //Obter lista de professores
             List<Turma> _Turmas = new List<Turma>();
-            _Turmas = TurmaData.ObterListaTurma();
+            _Turmas = turmaData.ObterListaTurma();
 
             //Retorno
             return _Turmas;
@@ -33,7 +33,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
         {
             //Obter lista de professores
             Turma _Turma = new Turma();
-            _Turma = TurmaData.ObterTurma(id);
+            _Turma = turmaData.ObterTurma(id);
 
             //Retorno
             return _Turma;
@@ -45,7 +45,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
         public MensProc Post([FromBody] Turma turmaIns)
         {
             //Adicionar registro de professos
-            string retProc = TurmaData.AdicionarTurma(turmaIns);
+            string retProc = turmaData.AdicionarTurma(turmaIns);
 
             //Retorno
             MensProc _mens = new MensProc();
@@ -59,7 +59,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
         public MensProc Put(int id, [FromBody] Turma turmaEdt)
         {
             //Adicionar registro de professos
-            string retProc = TurmaData.EditarTurma(id, turmaEdt);
+            string retProc = turmaData.EditarTurma(id, turmaEdt);
 
             //Retorno
             MensProc _mens = new MensProc();
@@ -73,7 +73,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
         public MensProc Delete(int id)
         {
             //Adicionar registro de professos
-            string retProc = TurmaData.ExcluirTurma(id);
+            string retProc = turmaData.ExcluirTurma(id);
 
             //Retorno
             MensProc _mens = new MensProc();

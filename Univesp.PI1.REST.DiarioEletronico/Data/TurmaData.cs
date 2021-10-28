@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Univesp.PI1.Database;
+using Univesp.PI1.REST.DiarioEletronico.Function;
 using Univesp.PI1.REST.DiarioEletronico.Models;
 using static Univesp.PI1.REST.DiarioEletronico.Except.ExceptionDb;
 
@@ -10,6 +11,9 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
 {
     public class TurmaData
     {
+        //Função comum
+        FuncComum funcComum = new FuncComum();
+        
         //Obter lista de Turma
         internal List<Turma> ObterListaTurma()
         {
@@ -34,14 +38,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
                     _turma.IdCadTurma = int.Parse(row["IdCadTurma"]);
                     _turma.IdCadProfessor = int.Parse(row["IdCadProfessor"]);
                     _turma.NomeTurma = row["NomeTurma"];
-                    _turma.B1Inicial = DbToRest(row["B1Inicial"]);
-                    _turma.B1Final = DbToRest(row["B1Final"]);
-                    _turma.B2Inicial = DbToRest(row["B2Inicial"]);
-                    _turma.B2Final = DbToRest(row["B2Final"]);
-                    _turma.B3Inicial = DbToRest(row["B3Inicial"]);
-                    _turma.B3Final = DbToRest(row["B3Final"]);
-                    _turma.B4Inicial = DbToRest(row["B4Inicial"]);
-                    _turma.B4Final = DbToRest(row["B4Final"]);
+                    _turma.B1Inicial = funcComum.DbToRest(row["B1Inicial"]);
+                    _turma.B1Final = funcComum.DbToRest(row["B1Final"]);
+                    _turma.B2Inicial = funcComum.DbToRest(row["B2Inicial"]);
+                    _turma.B2Final = funcComum.DbToRest(row["B2Final"]);
+                    _turma.B3Inicial = funcComum.DbToRest(row["B3Inicial"]);
+                    _turma.B3Final = funcComum.DbToRest(row["B3Final"]);
+                    _turma.B4Inicial = funcComum.DbToRest(row["B4Inicial"]);
+                    _turma.B4Final = funcComum.DbToRest(row["B4Final"]);
                     Turmas.Add(_turma);
                 }
             }
@@ -85,14 +89,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
                     _turma.IdCadTurma = int.Parse(row["IdCadTurma"]);
                     _turma.IdCadProfessor = int.Parse(row["IdCadProfessor"]);
                     _turma.NomeTurma = row["NomeTurma"];
-                    _turma.B1Inicial = DbToRest(row["B1Inicial"]);
-                    _turma.B1Final = DbToRest(row["B1Final"]);
-                    _turma.B2Inicial = DbToRest(row["B2Inicial"]);
-                    _turma.B2Final = DbToRest(row["B2Final"]);
-                    _turma.B3Inicial = DbToRest(row["B3Inicial"]);
-                    _turma.B3Final = DbToRest(row["B3Final"]);
-                    _turma.B4Inicial = DbToRest(row["B4Inicial"]);
-                    _turma.B4Final = DbToRest(row["B4Final"]);
+                    _turma.B1Inicial = funcComum.DbToRest(row["B1Inicial"]);
+                    _turma.B1Final = funcComum.DbToRest(row["B1Final"]);
+                    _turma.B2Inicial = funcComum.DbToRest(row["B2Inicial"]);
+                    _turma.B2Final = funcComum.DbToRest(row["B2Final"]);
+                    _turma.B3Inicial = funcComum.DbToRest(row["B3Inicial"]);
+                    _turma.B3Final = funcComum.DbToRest(row["B3Final"]);
+                    _turma.B4Inicial = funcComum.DbToRest(row["B4Inicial"]);
+                    _turma.B4Final = funcComum.DbToRest(row["B4Final"]);
                     Turma = _turma;
                 }
             }
@@ -125,14 +129,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             {
                 {"@IdCadProfessor", turmaIns.IdCadProfessor},
                 {"@NomeTurma", turmaIns.NomeTurma},
-                {"@B1Inicial", RestToDb(turmaIns.B1Inicial)},
-                {"@B1Final", RestToDb(turmaIns.B1Final)},
-                {"@B2Inicial", RestToDb(turmaIns.B2Inicial)},
-                {"@B2Final", RestToDb(turmaIns.B2Final)},
-                {"@B3Inicial", RestToDb(turmaIns.B3Inicial)},
-                {"@B3Final", RestToDb(turmaIns.B3Final)},
-                {"@B4Inicial", RestToDb(turmaIns.B4Inicial)},
-                {"@B4Final", RestToDb(turmaIns.B4Final)}
+                {"@B1Inicial", funcComum.RestToDb(turmaIns.B1Inicial)},
+                {"@B1Final", funcComum.RestToDb(turmaIns.B1Final)},
+                {"@B2Inicial", funcComum.RestToDb(turmaIns.B2Inicial)},
+                {"@B2Final", funcComum.RestToDb(turmaIns.B2Final)},
+                {"@B3Inicial", funcComum.RestToDb(turmaIns.B3Inicial)},
+                {"@B3Final", funcComum.RestToDb(turmaIns.B3Final)},
+                {"@B4Inicial", funcComum.RestToDb(turmaIns.B4Inicial)},
+                {"@B4Final", funcComum.RestToDb(turmaIns.B4Final)}
             };
 
             //Executando            
@@ -176,14 +180,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             {
                 {"@IdCadProfessor", turmaEdt.IdCadProfessor},
                 {"@NomeTurma", turmaEdt.NomeTurma},
-                {"@B1Inicial", RestToDb(turmaEdt.B1Inicial)},
-                {"@B1Final", RestToDb(turmaEdt.B1Final)},
-                {"@B2Inicial", RestToDb(turmaEdt.B2Inicial)},
-                {"@B2Final", RestToDb(turmaEdt.B2Final)},
-                {"@B3Inicial", RestToDb(turmaEdt.B3Inicial)},
-                {"@B3Final", RestToDb(turmaEdt.B3Final)},
-                {"@B4Inicial", RestToDb(turmaEdt.B4Inicial)},
-                {"@B4Final", RestToDb(turmaEdt.B4Final)},
+                {"@B1Inicial", funcComum.RestToDb(turmaEdt.B1Inicial)},
+                {"@B1Final", funcComum.RestToDb(turmaEdt.B1Final)},
+                {"@B2Inicial", funcComum.RestToDb(turmaEdt.B2Inicial)},
+                {"@B2Final", funcComum.RestToDb(turmaEdt.B2Final)},
+                {"@B3Inicial", funcComum.RestToDb(turmaEdt.B3Inicial)},
+                {"@B3Final", funcComum.RestToDb(turmaEdt.B3Final)},
+                {"@B4Inicial", funcComum.RestToDb(turmaEdt.B4Inicial)},
+                {"@B4Final", funcComum.RestToDb(turmaEdt.B4Final)},
                 {"@IdCadTurma", turmaEdt.IdCadTurma}
             };
 
@@ -234,22 +238,6 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
 
             //Retorno 
             return retProc;
-        }
-
-        //Conversão de Data - Db para Rest
-        private string DbToRest(string DtConv)
-        {
-            DateTime dtTemp = DateTime.Parse(DtConv);
-            
-            return dtTemp.ToString("dd/MM/yyyy");
-        }
-
-        //Conversão de Data - Rest para Db
-        private string RestToDb(string DtConv)
-        {
-            DateTime dtTemp = DateTime.Parse(DtConv);
-
-            return dtTemp.ToString("yyyy-MM-dd");
         }
     }
 }
