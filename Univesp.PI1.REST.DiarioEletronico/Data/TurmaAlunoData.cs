@@ -18,6 +18,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             string strQueryIns = string.Empty;
             strQueryIns += "Select IdMovTurma, IdCadTurma, IdCadAluno ";
             strQueryIns += "From CadTurmaAluno as turAl ";
+            strQueryIns += "Order by IdCadTurma, IdCadAluno ";
 
             //Executando            
             List<TurmaAluno> TurmaAlunos = new List<TurmaAluno>();

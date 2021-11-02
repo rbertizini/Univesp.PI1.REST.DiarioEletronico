@@ -53,21 +53,6 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
             return _mens;
         }
 
-        //PUT desativado - não haverá para esse processo
-        //// PUT api/turmaaluno/5
-        //[HttpPut]
-        //[Route("{id:int}")]
-        //public MensProc Put(int id, [FromBody] Turma turmaAlunoEdt)
-        //{
-        //    //Adicionar registro de professos
-        //    string retProc = turmaAlunoData.EditarTurmaAluno(id, turmaAlunoEdt);
-
-        //    //Retorno
-        //    MensProc _mens = new MensProc();
-        //    _mens.Mensagem = retProc;
-        //    return _mens;
-        //}
-
         // DELETE api/turmaaluno/5
         [HttpDelete]
         [Route("{id:int}")]

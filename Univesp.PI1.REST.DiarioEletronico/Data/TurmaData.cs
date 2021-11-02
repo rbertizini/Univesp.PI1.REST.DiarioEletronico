@@ -24,6 +24,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             strQueryIns += "B1Inicial, B1Final, B2Inicial, B2Final, ";
             strQueryIns += "B3Inicial, B3Final, B4Inicial, B4Final ";
             strQueryIns += "From CadTurma as tur ";
+            strQueryIns += "Order by NomeTurma ";
 
             //Executando            
             List<Turma> Turmas = new List<Turma>();
