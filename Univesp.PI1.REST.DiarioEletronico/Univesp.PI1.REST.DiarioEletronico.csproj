@@ -229,6 +229,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AlunoController.cs" />
+    <Compile Include="Controllers\AvaliacaoController.cs" />
     <Compile Include="Controllers\DiarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="Controllers\TurmaAlunoController.cs" />
     <Compile Include="Controllers\TurmaController.cs" />
     <Compile Include="Data\AlunoData.cs" />
+    <Compile Include="Data\AvaliacaoData.cs" />
     <Compile Include="Data\DiarioData.cs" />
     <Compile Include="Data\LoginData.cs" />
     <Compile Include="Data\ProfessorData.cs" />
@@ -285,6 +287,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Aluno\" />
+    <Folder Include="Views\Avaliacao\" />
     <Folder Include="Views\Diario\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Professor\" />
