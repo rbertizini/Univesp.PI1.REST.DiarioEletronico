@@ -17,7 +17,6 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
         internal IEnumerable<Bimestre> GetTurmaBimestre(int bimestre, int id)
         {
             //Criando instrução
-
             string strQueryIns = string.Empty;
             strQueryIns += "Select * ";
             strQueryIns += "From ResBimestre ";
@@ -63,6 +62,23 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             return Bimestre;
         }
 
+        internal string Save(int bimestre, int id)
+        {        
+            List<Avaliacao> _Avaliacao = new List<Avaliacao>();
+            List<Diario> _Diario = new List<Diario>();
+            try
+            {
+                _Diario = GetDiario(id);
+                _Avaliacao = GetAvaliacao(id);
+
+                return "";
+            }
+            catch (Exception ex)
+            {
+                throw new DbInicProcException(message: "Erro no método ObterListaAvalTurma", innerException: ex.InnerException);
+            }
+        }
+
         //Exclui os dados da tabela ResBimestre pelo id da turma e bimestre
         internal string DeleteTurmaBimestre(int bimestre, int id)
         {
@@ -94,6 +110,85 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
 
             //Retorno 
             return retProc;
+        }
+
+        private List<Diario> GetDiario(int id)
+        {
+            string strQueryInsDiario = string.Empty;
+            strQueryInsDiario += "Select * ";
+            strQueryInsDiario += "From MovDiario ";
+            strQueryInsDiario += "Where IdCadTurma = @id";
+            strQueryInsDiario += "Order by Data";
+
+            //Parâmetros
+            var parQueryInsDiario = new Dictionary<string, object>
+            {
+                {"@id", id},
+            };
+
+            //Executando            
+            List<Diario> _Diario = new List<Diario>();
+            try
+            {
+                List<Dictionary<string, string>> listRowsDiario = new List<Dictionary<string, string>>();
+                listRowsDiario = procDb.SelecionarLista(strQueryInsDiario, parQueryInsDiario);
+
+                foreach (var row in listRowsDiario)
+                {
+                    Diario bim = new Diario();
+                    bim.IdMovDiario = int.Parse(row["IdMovDiario"]);
+                    bim.IdCadTurma = int.Parse(row["IdCadTurma"]);
+                    bim.IdCadAluno = int.Parse(row["IdCadAluno"]);
+                    bim.Data = row["Data"];
+                    bim.Presenca = row["Presenca"];
+                    _Diario.Add(bim);
+                }
+
+                return _Diario;
+            }
+            catch (Exception ex)
+            {
+                throw new DbInicProcException(message: "Erro no método ObterListaAvalTurma", innerException: ex.InnerException);
+            }
+        }
+
+        private List<Avaliacao> GetAvaliacao(int id) 
+        {
+            string strQueryInsAvaliacao = string.Empty;
+            strQueryInsAvaliacao += "Select * ";
+            strQueryInsAvaliacao += "From MovAvaliacao ";
+            strQueryInsAvaliacao += "Where IdCadTurma = @id";
+            strQueryInsAvaliacao += "Order by Data";
+
+            //Parâmetros
+            var parQueryInsAvaliacao = new Dictionary<string, object>
+            {
+                {"@id", id},
+            };
+
+            //Executando            
+            List<Avaliacao> _Avaliacao = new List<Avaliacao>();
+            try
+            {
+                List<Dictionary<string, string>> listRowsAvaliacao = new List<Dictionary<string, string>>();
+                listRowsAvaliacao = procDb.SelecionarLista(strQueryInsAvaliacao, parQueryInsAvaliacao);
+
+                foreach (var row in listRowsAvaliacao)
+                {
+                    Avaliacao bim = new Avaliacao();
+                    bim.IdMovAvaliacao = int.Parse(row["IdMovAvaliacao"]);
+                    bim.IdCadTurma = int.Parse(row["IdCadTurma"]);
+                    bim.IdCadAluno = int.Parse(row["IdCadAluno"]);
+                    bim.Data = row["Data"];
+                    _Avaliacao.Add(bim);
+                }
+
+                return _Avaliacao;
+            }
+            catch (Exception ex)
+            {
+                throw new DbInicProcException(message: "Erro no método GetAvaliacao", innerException: ex.InnerException);
+            }
         }
     }
 }

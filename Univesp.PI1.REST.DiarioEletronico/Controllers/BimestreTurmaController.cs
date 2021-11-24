@@ -24,7 +24,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
         [Route("post-bismestre-turma")]
         public string PostTurma(int bimestre, int id)
         {
-            return _BimestreData.DeleteTurmaBimestre(bimestre, id);
+            return _BimestreData.Save(bimestre, id);
         }
 
         [HttpDelete]
