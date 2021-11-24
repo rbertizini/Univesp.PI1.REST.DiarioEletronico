@@ -230,6 +230,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\AvaliacaoController.cs" />
+    <Compile Include="Controllers\BimestreTurmaController.cs" />
     <Compile Include="Controllers\DiarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Controllers\TurmaController.cs" />
     <Compile Include="Data\AlunoData.cs" />
     <Compile Include="Data\AvaliacaoData.cs" />
+    <Compile Include="Data\BimestreData.cs" />
     <Compile Include="Data\DiarioData.cs" />
     <Compile Include="Data\LoginData.cs" />
     <Compile Include="Data\ProfessorData.cs" />
@@ -250,6 +252,7 @@
     </Compile>
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Avaliacao.cs" />
+    <Compile Include="Models\Bimestre.cs" />
     <Compile Include="Models\Diario.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\MensProc.cs" />
