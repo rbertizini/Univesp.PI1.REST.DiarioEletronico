@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Univesp.PI1.Database;
 using Univesp.PI1.REST.DiarioEletronico.Function;
 using Univesp.PI1.REST.DiarioEletronico.Models;
@@ -13,7 +11,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
     {
         //Função comum
         FuncComum funcComum = new FuncComum();
-        
+
         //Obter lista de Turma
         internal List<Turma> ObterListaTurma()
         {
@@ -39,14 +37,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
                     _turma.IdCadTurma = int.Parse(row["IdCadTurma"]);
                     _turma.IdCadProfessor = int.Parse(row["IdCadProfessor"]);
                     _turma.NomeTurma = row["NomeTurma"];
-                    _turma.B1Inicial = funcComum.DbToRest(row["B1Inicial"]);
-                    _turma.B1Final = funcComum.DbToRest(row["B1Final"]);
-                    _turma.B2Inicial = funcComum.DbToRest(row["B2Inicial"]);
-                    _turma.B2Final = funcComum.DbToRest(row["B2Final"]);
-                    _turma.B3Inicial = funcComum.DbToRest(row["B3Inicial"]);
-                    _turma.B3Final = funcComum.DbToRest(row["B3Final"]);
-                    _turma.B4Inicial = funcComum.DbToRest(row["B4Inicial"]);
-                    _turma.B4Final = funcComum.DbToRest(row["B4Final"]);
+                    _turma.B1Inicial = funcComum.DtDbToRest(row["B1Inicial"]);
+                    _turma.B1Final = funcComum.DtDbToRest(row["B1Final"]);
+                    _turma.B2Inicial = funcComum.DtDbToRest(row["B2Inicial"]);
+                    _turma.B2Final = funcComum.DtDbToRest(row["B2Final"]);
+                    _turma.B3Inicial = funcComum.DtDbToRest(row["B3Inicial"]);
+                    _turma.B3Final = funcComum.DtDbToRest(row["B3Final"]);
+                    _turma.B4Inicial = funcComum.DtDbToRest(row["B4Inicial"]);
+                    _turma.B4Final = funcComum.DtDbToRest(row["B4Final"]);
                     Turmas.Add(_turma);
                 }
             }
@@ -90,14 +88,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
                     _turma.IdCadTurma = int.Parse(row["IdCadTurma"]);
                     _turma.IdCadProfessor = int.Parse(row["IdCadProfessor"]);
                     _turma.NomeTurma = row["NomeTurma"];
-                    _turma.B1Inicial = funcComum.DbToRest(row["B1Inicial"]);
-                    _turma.B1Final = funcComum.DbToRest(row["B1Final"]);
-                    _turma.B2Inicial = funcComum.DbToRest(row["B2Inicial"]);
-                    _turma.B2Final = funcComum.DbToRest(row["B2Final"]);
-                    _turma.B3Inicial = funcComum.DbToRest(row["B3Inicial"]);
-                    _turma.B3Final = funcComum.DbToRest(row["B3Final"]);
-                    _turma.B4Inicial = funcComum.DbToRest(row["B4Inicial"]);
-                    _turma.B4Final = funcComum.DbToRest(row["B4Final"]);
+                    _turma.B1Inicial = funcComum.DtDbToRest(row["B1Inicial"]);
+                    _turma.B1Final = funcComum.DtDbToRest(row["B1Final"]);
+                    _turma.B2Inicial = funcComum.DtDbToRest(row["B2Inicial"]);
+                    _turma.B2Final = funcComum.DtDbToRest(row["B2Final"]);
+                    _turma.B3Inicial = funcComum.DtDbToRest(row["B3Inicial"]);
+                    _turma.B3Final = funcComum.DtDbToRest(row["B3Final"]);
+                    _turma.B4Inicial = funcComum.DtDbToRest(row["B4Inicial"]);
+                    _turma.B4Final = funcComum.DtDbToRest(row["B4Final"]);
                     Turma = _turma;
                 }
             }
@@ -130,14 +128,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             {
                 {"@IdCadProfessor", turmaIns.IdCadProfessor},
                 {"@NomeTurma", turmaIns.NomeTurma},
-                {"@B1Inicial", funcComum.RestToDb(turmaIns.B1Inicial)},
-                {"@B1Final", funcComum.RestToDb(turmaIns.B1Final)},
-                {"@B2Inicial", funcComum.RestToDb(turmaIns.B2Inicial)},
-                {"@B2Final", funcComum.RestToDb(turmaIns.B2Final)},
-                {"@B3Inicial", funcComum.RestToDb(turmaIns.B3Inicial)},
-                {"@B3Final", funcComum.RestToDb(turmaIns.B3Final)},
-                {"@B4Inicial", funcComum.RestToDb(turmaIns.B4Inicial)},
-                {"@B4Final", funcComum.RestToDb(turmaIns.B4Final)}
+                {"@B1Inicial", funcComum.DtRestToDb(turmaIns.B1Inicial)},
+                {"@B1Final", funcComum.DtRestToDb(turmaIns.B1Final)},
+                {"@B2Inicial", funcComum.DtRestToDb(turmaIns.B2Inicial)},
+                {"@B2Final", funcComum.DtRestToDb(turmaIns.B2Final)},
+                {"@B3Inicial", funcComum.DtRestToDb(turmaIns.B3Inicial)},
+                {"@B3Final", funcComum.DtRestToDb(turmaIns.B3Final)},
+                {"@B4Inicial", funcComum.DtRestToDb(turmaIns.B4Inicial)},
+                {"@B4Final", funcComum.DtRestToDb(turmaIns.B4Final)}
             };
 
             //Executando            
@@ -181,14 +179,14 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             {
                 {"@IdCadProfessor", turmaEdt.IdCadProfessor},
                 {"@NomeTurma", turmaEdt.NomeTurma},
-                {"@B1Inicial", funcComum.RestToDb(turmaEdt.B1Inicial)},
-                {"@B1Final", funcComum.RestToDb(turmaEdt.B1Final)},
-                {"@B2Inicial", funcComum.RestToDb(turmaEdt.B2Inicial)},
-                {"@B2Final", funcComum.RestToDb(turmaEdt.B2Final)},
-                {"@B3Inicial", funcComum.RestToDb(turmaEdt.B3Inicial)},
-                {"@B3Final", funcComum.RestToDb(turmaEdt.B3Final)},
-                {"@B4Inicial", funcComum.RestToDb(turmaEdt.B4Inicial)},
-                {"@B4Final", funcComum.RestToDb(turmaEdt.B4Final)},
+                {"@B1Inicial", funcComum.DtRestToDb(turmaEdt.B1Inicial)},
+                {"@B1Final", funcComum.DtRestToDb(turmaEdt.B1Final)},
+                {"@B2Inicial", funcComum.DtRestToDb(turmaEdt.B2Inicial)},
+                {"@B2Final", funcComum.DtRestToDb(turmaEdt.B2Final)},
+                {"@B3Inicial", funcComum.DtRestToDb(turmaEdt.B3Inicial)},
+                {"@B3Final", funcComum.DtRestToDb(turmaEdt.B3Final)},
+                {"@B4Inicial", funcComum.DtRestToDb(turmaEdt.B4Inicial)},
+                {"@B4Final", funcComum.DtRestToDb(turmaEdt.B4Final)},
                 {"@IdCadTurma", turmaEdt.IdCadTurma}
             };
 

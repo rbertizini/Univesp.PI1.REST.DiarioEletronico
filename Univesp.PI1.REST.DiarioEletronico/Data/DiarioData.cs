@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Univesp.PI1.Database;
 using Univesp.PI1.REST.DiarioEletronico.Function;
 using Univesp.PI1.REST.DiarioEletronico.Models;
@@ -45,7 +43,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
                     _diario.IdMovDiario = int.Parse(row["IdMovDiario"]);
                     _diario.IdCadTurma = int.Parse(row["IdCadTurma"]);
                     _diario.IdCadAluno = int.Parse(row["IdCadAluno"]);
-                    _diario.Data = funcComum.DbToRest(row["Data"]);
+                    _diario.Data = funcComum.DtDbToRest(row["Data"]);
                     _diario.Presenca = row["Presenca"];
                     Diarios.Add(_diario);
                 }
@@ -75,7 +73,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             {
                 {"@IdCadTurma", diarioIns.IdCadTurma},
                 {"@IdCadAluno", diarioIns.IdCadAluno},
-                {"@Data", funcComum.RestToDb(diarioIns.Data)},
+                {"@Data", funcComum.DtRestToDb(diarioIns.Data)},
                 {"@Presenca", diarioIns.Presenca}
             };
 

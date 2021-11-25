@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Univesp.PI1.Database;
 using Univesp.PI1.REST.DiarioEletronico.Models;
 using static Univesp.PI1.REST.DiarioEletronico.Except.ExceptionDb;
@@ -98,7 +96,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             strQueryIns += "(NomeProfessor, Disciplina, Email) ";
             strQueryIns += "values ";
             strQueryIns += "(@NomeProfessor, @Disciplina, @Email) ";
-            
+
             //Parâmetros
             var parQueryIns = new Dictionary<string, object>
             {
@@ -137,7 +135,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             if (!string.IsNullOrEmpty(profEdt.Senha))
                 strQueryIns += ", Senha = @Senha ";
             strQueryIns += "Where IdCadProfessor = @IdCadProfessor";
-            
+
             //Parâmetros
             var parQueryIns = new Dictionary<string, object>
             {

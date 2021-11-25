@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace Univesp.PI1.REST.DiarioEletronico
 {
@@ -17,8 +14,12 @@ namespace Univesp.PI1.REST.DiarioEletronico
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                defaults: new { id = RouteParameter.Optional });
+
+            config.Routes.MapHttpRoute(
+                name: "BimestreTurma",
+                routeTemplate: "api/{controller}/{bimestre}/{id}",
+                defaults: new { bimestre = RouteParameter.Optional, id = RouteParameter.Optional });
         }
     }
 }

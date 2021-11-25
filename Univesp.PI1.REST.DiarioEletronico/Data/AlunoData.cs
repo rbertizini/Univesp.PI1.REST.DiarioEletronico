@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Univesp.PI1.Database;
 using Univesp.PI1.REST.DiarioEletronico.Models;
 using static Univesp.PI1.REST.DiarioEletronico.Except.ExceptionDb;

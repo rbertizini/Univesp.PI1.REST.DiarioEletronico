@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using Univesp.PI1.REST.DiarioEletronico.Data;
 using Univesp.PI1.REST.DiarioEletronico.Models;
@@ -11,7 +8,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
     [RoutePrefix("api/professor")]
     public class ProfessorController : ApiController
     {
-        
+
         ProfessorData profData = new ProfessorData();
 
         // GET api/professor
@@ -22,7 +19,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
             //Obter lista de professores
             List<Professor> _profs = new List<Professor>();
             _profs = profData.ObterListaProfessor();
-            
+
             //Retorno
             return _profs;
         }
@@ -35,7 +32,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Controllers
             //Obter lista de professores
             Professor _prof = new Professor();
             _prof = profData.ObterProfessor(id);
-           
+
             //Retorno
             return _prof;
         }

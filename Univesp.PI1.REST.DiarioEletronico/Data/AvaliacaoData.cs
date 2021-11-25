@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Univesp.PI1.Database;
 using Univesp.PI1.REST.DiarioEletronico.Function;
 using Univesp.PI1.REST.DiarioEletronico.Models;
@@ -45,7 +43,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
                     _aval.IdMovAvaliacao = int.Parse(row["IdMovAvaliacao"]);
                     _aval.IdCadTurma = int.Parse(row["IdCadTurma"]);
                     _aval.IdCadAluno = int.Parse(row["IdCadAluno"]);
-                    _aval.Data = funcComum.DbToRest(row["Data"]);
+                    _aval.Data = funcComum.DtDbToRest(row["Data"]);
                     _aval.Nota = Decimal.Parse(row["Nota"]);
                     Avaliacaoes.Add(_aval);
                 }
@@ -75,7 +73,7 @@ namespace Univesp.PI1.REST.DiarioEletronico.Data
             {
                 {"@IdCadTurma", avalIns.IdCadTurma},
                 {"@IdCadAluno", avalIns.IdCadAluno},
-                {"@Data", funcComum.RestToDb(avalIns.Data)},
+                {"@Data", funcComum.DtDbToC(avalIns.Data)},
                 {"@Nota", avalIns.Nota}
             };
 
